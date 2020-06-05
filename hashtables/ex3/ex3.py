@@ -3,8 +3,20 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    cache = {}
+    inAllThree = []
+    matchLimit = len(arrays)
+    for arr in arrays:
+        for i in arr:
+            if i not in cache:
+                cache[i] = 1
+            else:
+                cache[i] += 1
+                if cache[i] == matchLimit:
+                    inAllThree.append(i)
+    return inAllThree
 
-    return result
+    # return result
 
 
 if __name__ == "__main__":
